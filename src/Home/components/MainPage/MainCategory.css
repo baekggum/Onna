@@ -1,0 +1,80 @@
+.maincategory {
+  margin-top: 40px;
+}
+
+.categories1,
+.categories2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 10px;
+  background: #fff;
+}
+
+.categories2 {
+  margin-bottom: 25px;
+}
+
+.categories1 button {
+  width: 220px;
+  height: 220px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 1px solid #c67321;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: black;
+  font-family: "BM HANNA_TTF";
+}
+
+.categories2 button {
+  width: 220px;
+  height: 220px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  border: 1px solid #c67321;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: black;
+  font-family: "BM HANNA_TTF";
+}
+
+button img {
+  margin-top: 12px;
+  width: 120px;
+  height: 120px;
+}
+
+.categories1 :focus {
+  outline: 2px solid #c67321;
+}
+.categories2 :focus {
+  outline: 2px solid #c67321;
+}
+.categories1 p {
+  margin-top: 3px;
+  text-align: center;
+}
+
+.categories2 p {
+  margin-top: 3px;
+  text-align: center;
+}

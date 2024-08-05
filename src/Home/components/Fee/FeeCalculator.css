@@ -1,0 +1,97 @@
+.calculatorsection {
+  padding: 20px;
+  margin-top: 100px;
+}
+
+.feeInput h2 {
+  font-size: 90px; /* 제목 폰트 크기 */
+}
+
+.feeInput {
+  display: flex;
+  font-size: 30px;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.feeInput input {
+  padding: 20px; /* 내부 여백 설정 */
+  font-size: 90px; /* 폰트 크기 설정 */
+  box-sizing: border-box; /* padding을 포함한 크기 설정 */
+  width: 30%; /* 입력 박스 너비 설정 */
+  height: 100px; /* 입력 박스 높이 설정 */
+  font-family: "BM HANNA_TTF";
+  text-align: left;
+  background-color: white;
+  color: black;
+  font-size: 40px;
+}
+
+.fee-calculator {
+  width: 90%;
+  height: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  color: black;
+}
+
+.trainer-fee {
+  width: 90%;
+  height: 100px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 20px;
+  color: black;
+}
+
+.feeInput {
+  display: flex;
+  font-size: 30px;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.feeInput input {
+  width: 130px;
+  height: 50px;
+  font-size: 30px;
+  font-family: "BM HANNA_TTF";
+  text-align: left;
+  background-color: white;
+  color: black;
+}
+
+.output .item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 40px;
+}
+
+.output .item2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid transparent;
+  font-size: 40px;
+}
+
+.output .item3 {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid transparent;
+  font-size: 40px;
+}
+
+.output .item:last-child {
+  border-bottom: none;
+}

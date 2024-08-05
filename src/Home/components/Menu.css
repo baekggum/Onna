@@ -1,0 +1,37 @@
+.menu_headbar {
+  display: flex;
+  gap: 38%;
+  padding-left: 25px;
+  text-align: center;
+  color: black;
+  font-size: 35px;
+}
+
+.menu_headbar img {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.menu_headbar button {
+  background-color: transparent;
+  border: none;
+}
+
+.menuContainer {
+  height: 80%;
+}
+
+.regB {
+  width: 100%;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: rgba(10, 142, 217, 0.64);
+  color: #fff;
+  font-family: "BM HANNA_TTF";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

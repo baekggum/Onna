@@ -1,0 +1,17 @@
+.footerback {
+  padding: 20px;
+  position: absolute;
+  bottom: 120px;
+  left: 380px;
+  color: black;
+}
+
+.footerback button {
+  background-color: transparent;
+  width: 180px;
+  height: 100px;
+  flex-shrink: 0;
+  color: black;
+  text-decoration: underline;
+  font-size: 35px;
+}

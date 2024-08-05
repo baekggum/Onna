@@ -1,0 +1,162 @@
+.image-upload {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 350px;
+}
+
+.image-preview {
+  flex-shrink: 0;
+}
+
+.preview-image {
+  width: 300px; /* 더 큰 고정된 너비 */
+  height: 300px; /* 더 큰 고정된 높이 */
+  object-fit: cover; /* 이미지의 왜곡 없이 고정 크기에 맞춤 */
+  margin-right: 10px;
+}
+
+.upload-button {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+.upload-button img {
+  width: 50px;
+  height: 50px;
+}
+
+.remove-button {
+  position: absolute;
+  top: 5px; /* 이미지 내부의 상단 여백 */
+  right: 15px; /* 이미지 내부의 우측 여백 */
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1; /* 버튼이 이미지 위에 나타나도록 설정 */
+}
+
+.detailBox {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.detailBox input,
+.detailBox textarea {
+  background-color: transparent;
+  width: 100%;
+  border-radius: 20px;
+  font-size: 20px;
+  color: black;
+  padding-left: 30px;
+  padding-top: 15px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  font-size: 40px;
+}
+
+.title {
+  height: 100px;
+  margin-bottom: 30px;
+}
+
+.content {
+  height: 600px;
+  resize: none;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.title::placeholder,
+.content::placeholder {
+  font-size: 40px;
+}
+
+.holidayCheck {
+  color: black;
+  width: 90%;
+  height: 200px;
+  padding-left: 30px;
+  font-size: 35px;
+}
+
+.holidayCheck h3 {
+  text-align: left;
+  padding-left: 25px;
+  font-size: 40px;
+}
+.custom-checkbox {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 35px; /* 체크박스 너비 */
+  height: 35px; /* 체크박스 높이 */
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  margin-right: 4px; /* 체크박스와 요일 사이의 간격 */
+}
+
+.custom-checkbox:checked {
+  border: 1px solid #007bff;
+}
+
+/* .custom-checkbox:checked::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px; /* 체크된 표시의 너비 */
+/* height: 6px; 체크된 표시의 높이 */
+/* background-color: #007bff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+.holidayCheck label {
+  display: flex;
+  align-items: center;
+}
+
+/* 시간 */
+
+.timecontainer {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  color: black;
+}
+
+.time-inputs {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-left: 45px;
+}
+
+.label {
+  margin-bottom: 1px;
+  font-size: 40px;
+}
+
+.timeinput {
+  background-color: white;
+  width: 98%; /* 인풋 요소의 너비를 컨테이너의 너비에 맞추기 */
+  padding: 10px;
+  box-sizing: border-box;
+  border: 2px solid black; /* 테두리 색상 설정 */
+  border-radius: 10px;
+  color: black; /* 글자 색상 설정 */
+  font-size: 40px;
+}
+
+.result {
+  margin-top: 20px;
+  margin-left: 40px;
+  font-size: 40px;
+}

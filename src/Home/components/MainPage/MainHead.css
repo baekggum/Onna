@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "BM HANNA_TTF";
+  src: url("/font/BMHANNAPro.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  background-color: #0a8ed9;
+  color: white;
+  width: 100%;
+  height: 22%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-bottom: 35px;
+  font-family: "BM HANNA_TTF";
+  position: relative;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-top h1 {
+  color: #f5f5f5;
+  -webkit-text-stroke-width: 1;
+  -webkit-text-stroke-color: #fff;
+  font-size: 120px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  align-self: flex-start;
+  padding: 30px;
+}
+
+.header-top button {
+  background-color: #0a8ed9;
+  box-shadow: none;
+  border: none;
+}
+
+.header-top button img {
+  padding: 15px;
+  width: 100px;
+  height: 100px;
+}
+
+::placeholder {
+  font-family: "BM HANNA_TTF";
+  font-size: 35px;
+}
+
+header button {
+  font-size: 35px;
+  padding-left: 50px;
+  padding-top: 30px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 1px solid #3aad1d;
+  background: #fff;
+  margin-left: 40px;
+  padding-left: 10px;
+}
+
+.search-bar svg {
+  width: 150px;
+  height: 150px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.search-bar input {
+  flex-grow: 1;
+  padding: 30px;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  width: 50%;
+  margin-left: 30px;
+  color: black;
+  font-size: 35px;
+}

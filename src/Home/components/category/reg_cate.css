@@ -1,0 +1,77 @@
+@font-face {
+  font-family: "BM HANNA_TTF";
+  src: url("/src/assets/BMHANNAPro.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.headbar {
+  display: flex;
+  color: black;
+  font-size: 35px;
+}
+
+.headbar h3 {
+  font-size: 40px;
+  padding-left: 30px;
+}
+.headbar img {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 20px;
+}
+
+.headbar button {
+  background-color: transparent;
+  width: 90px;
+  height: 90px;
+  padding: 30px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border: none;
+}
+
+.category h2 {
+  color: black;
+  font-size: 45px;
+  text-align: left;
+  margin-left: 27px;
+}
+
+.left button {
+  display: block;
+  color: black;
+  font-family: "BM HANNA_TTF";
+  padding: 30px;
+  margin: 5px 0;
+  font-size: 40px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  width: 400px;
+  text-align: left;
+}
+
+.right button {
+  display: block;
+  color: black;
+  font-family: "BM HANNA_TTF";
+  padding: 30px;
+  margin: 5px 0;
+  font-size: 40px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  width: 400px;
+  text-align: left;
+}
+
+.left,
+.right {
+  display: inline-block;
+  vertical-align: top;
+  width: 400px;
+}
+
+.category {
+  padding: 20px;
+  margin-top: 20px;
+}

@@ -1,0 +1,33 @@
+.BNbutton {
+  bottom: 0;
+  width: 95%;
+  height: 120px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.Nextbutton {
+  background-color: #0a8ed9;
+  opacity: 0.6;
+  width: 180px;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  font-size: 30px;
+  border: none;
+}
+
+.Backbutton {
+  background-color: transparent;
+  width: 180px;
+  height: 100px;
+  flex-shrink: 0;
+  color: black;
+  text-decoration: underline;
+  border-radius: 20px;
+  font-size: 30px;
+  border: none;
+}

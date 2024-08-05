@@ -1,0 +1,49 @@
+.addBox {
+  padding-top: 100px;
+  padding-bottom: 600px;
+}
+
+.inputWrapper {
+  padding: 20px;
+  margin: 15px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.inputWrapper input {
+  flex-grow: 1;
+  padding: 18px;
+  border: none;
+  font-family: "BM HANNA_TTF";
+  font-size: 17px;
+  width: 95%;
+  height: 100px;
+  background-color: transparent;
+  font-size: 40px;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  opacity: 0.2;
+  background: #000;
+}
+
+.regAcon {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.regA {
+  width: 100%;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: rgba(10, 142, 217, 0.64);
+  color: #fff;
+  font-family: "BM HANNA_TTF";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

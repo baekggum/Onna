@@ -1,0 +1,18 @@
+footer {
+  padding: 20px;
+  position: absolute;
+  bottom: 120px;
+  right: 360px;
+}
+
+footer button {
+  background-color: #0a8ed9;
+  opacity: 0.6;
+  width: 180px;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  font-size: 30px;
+  color: white;
+  border: none;
+}
