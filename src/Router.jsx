@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import App from "./App";
 import Product from "./Trainer/pages/Product";
 import ProductDetail from "./Trainer/pages/ProductDetail";
 import ProductReservation from "./Trainer/pages/ProductReservation";
@@ -28,12 +27,13 @@ import AddressSearch from "./Home/pages/AddressSearch";
 import AddressVerification from "./Home/pages/AddressVerification";
 import RegisterPage from "./User/pages/RegisterPage";
 import CompletePage from "./User/pages/CompletePage";
+import LoginPage from "./User/pages/LoginPage";
 
 export default function Router() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<App />}></Route>
+        <Route path="/" element={<LoginPage />}></Route>
         <Route path="/register" element={<RegisterPage />}></Route>
         <Route path="/complete" element={<CompletePage />}></Route>
         <Route path="/product" element={<Product />}></Route>
