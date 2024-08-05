@@ -27,6 +27,7 @@ import Fitness from "./Home/pages/reg_category/Fitness";
 import AddressSearch from "./Home/pages/AddressSearch";
 import AddressVerification from "./Home/pages/AddressVerification";
 import RegisterPage from "./User/pages/RegisterPage";
+import CompletePage from "./User/pages/CompletePage";
 
 export default function Router() {
   return (
@@ -34,6 +35,7 @@ export default function Router() {
       <Routes>
         <Route path="/" element={<App />}></Route>
         <Route path="/register" element={<RegisterPage />}></Route>
+        <Route path="/complete" element={<CompletePage />}></Route>
         <Route path="/product" element={<Product />}></Route>
         <Route path="/productdetail" element={<ProductDetail />}></Route>
         <Route
