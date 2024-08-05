@@ -26,10 +26,18 @@ const Memo = styled.textarea`
   width: 100%;
   height: 150px;
   padding: 16px;
+  font-size: 1.25rem;
+  background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 30px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   resize: none;
+  outline: none;
+
+  &::placeholder {
+    color: #c5c5c5;
+    font-size: 1.25rem;
+  }
 `;
 
 const UploadButton = styled.button`
@@ -71,7 +79,11 @@ function ReviewUpload({ lesson, review, onUpload }) {
       <RatingWrapper>
         <Rating rate={rate} onClick={onClickRate} />
       </RatingWrapper>
-      <Memo placeholder="리뷰를 남겨주세요" onChange={handleMemoChange}>
+      <Memo
+        defaultValue={initialMemo}
+        placeholder="리뷰를 남겨주세요"
+        onChange={handleMemoChange}
+      >
         {initialMemo}
       </Memo>
       <UploadButton onClick={() => precheck() && onUpload()}>

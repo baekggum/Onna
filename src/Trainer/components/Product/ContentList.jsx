@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Person1 from "/assets/Person1.svg";
 import Person2 from "/assets/Person2.svg";
 import Person3 from "/assets/Person3.svg";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const navList = [
   {
@@ -169,7 +171,9 @@ const ListItemText = styled.p`
   color: black;
 `;
 
-export default function ContentList() {
+export default function ContentList({ category }) {
+  // const [navList, setNavList] = useState([]);
+
   const formatCommentCount = (count) => {
     if (count >= 1000) return "1000+";
     if (count >= 500) return "500+";
@@ -179,6 +183,21 @@ export default function ContentList() {
     return count;
   };
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_APP_URL}/product/large/${category}`
+        );
+        setNavList(response.data); // 서버에서 받은 데이터를 navList에 저장
+        console.log(navList);
+      } catch (error) {
+        console.error("데이터를 가져오는 데 오류가 발생했습니다:", error);
+      }
+    };
+
+    fetchData();
+  }, [category]);
   return (
     <List>
       {navList.map((item, index) => (

@@ -3,6 +3,8 @@ import { useState } from "react";
 import axios from "axios";
 import Button from "./Button";
 import Title from "./Title";
+import ImageUpload from "./ImageUpload";
+import { useNavigate } from "react-router";
 
 const Container = styled.div`
   display: flex;
@@ -68,10 +70,11 @@ const UserType = styled.button`
   border: none;
   border-radius: 22px;
 
-  ${({ isSelected }) => (isSelected ? UserTypeSelected : UserTypeUnselected)}
+  ${({ selected }) => (selected ? UserTypeSelected : UserTypeUnselected)}
 `;
 
 function UserForm() {
+  const navigate = useNavigate();
   const [role, setRole] = useState("");
   const [formData, setFormData] = useState({
     uid: "",
@@ -79,27 +82,64 @@ function UserForm() {
     confirmPassword: "",
     name: "",
     nickname: "",
+    imageURL: "",
     phone: "",
     address: "",
   });
+
+  const [image, setImage] = useState(null); // 이미지 상태 추가
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  const handleImageChange = (e) => {
+    setImage(e.target.files[0]); // 선택한 이미지 파일 저장
+  };
+
   const handleSubmit = async () => {
+    const formdata = new FormData();
+    const userDto = {
+      uid: formData.uid,
+      password: formData.password,
+      name: formData.name,
+      phone: formData.phone,
+      nickname: formData.nickname,
+      address: formData.address,
+      imageURL: formData.imageURL,
+      role: role,
+    };
+
+    formdata.append(
+      "userDto",
+      new Blob([JSON.stringify(userDto)], {
+        type: "application/json",
+      })
+    );
+    console.log(userDto);
+
+    if (image) {
+      formdata.append("image", image);
+    }
+
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_APP_URL}/user/signup`,
+        formdata,
         {
-          userDto: {
-            ...formData,
-            role,
+          headers: {
+            "Content-Type": "multipart/form-data", // Content-Type을 multipart/form-data로 설정
           },
         }
       );
       console.log("회원가입 성공:", response.data);
+
+      if (role == "USER") {
+        navigate("/complete");
+      } else {
+        navigate("/trainercert");
+      }
     } catch (error) {
       console.error("회원가입 오류:", error);
     }
@@ -107,41 +147,50 @@ function UserForm() {
 
   return (
     <Container>
-      <Title>회원가입</Title>
-      <Form>
-        <Label>아이디</Label>
-        <Input name="" type="text" onChange={handleChange} tabIndex="1"></Input>
-        <Label>비밀번호</Label>
-        <Input type="password" onChange={handleChange} tabIndex="2"></Input>
-        <Label>비밀번호 확인</Label>
-        <Input type="password" onChange={handleChange} tabIndex="3"></Input>
-        <Label>이름</Label>
-        <Input type="text" onChange={handleChange} tabIndex="4"></Input>
-        <Label>닉네임</Label>
-        <Input type="text" onChange={handleChange} tabIndex="5"></Input>
-        <Label>전화번호</Label>
-        <Input type="tel" onChange={handleChange} tabIndex="6"></Input>
-        <Label>주소</Label>
-        <Input type="text" onChange={handleChange} tabIndex="7"></Input>
-        <Label>회원 종류</Label>
-        <UserTypes>
-          <UserType
-            onClick={() => setRole("USER")}
-            isSelected={role == "USER"}
-            tabIndex="8"
-          >
-            유저
-          </UserType>
-          <UserType
-            onClick={() => setRole("TRAINER")}
-            isSelected={role == "TRAINER"}
-            tabIndex="9"
-          >
-            트레이너
-          </UserType>
-        </UserTypes>
-      </Form>
-      <Button onClick={handleSubmit}>다음</Button>
+      <Label>아이디</Label>
+      <Input name="uid" type="text" onChange={handleChange} tabIndex="1" />
+      <Label>비밀번호</Label>
+      <Input
+        name="password"
+        type="password"
+        onChange={handleChange}
+        tabIndex="2"
+      />
+      <Label>비밀번호 확인</Label>
+      <Input
+        name="confirmPassword"
+        type="password"
+        onChange={handleChange}
+        tabIndex="3"
+      />
+      <Label>이름</Label>
+      <Input name="name" type="text" onChange={handleChange} tabIndex="4" />
+      <Label>닉네임</Label>
+      <Input name="nickname" type="text" onChange={handleChange} tabIndex="5" />
+      <Label>전화번호</Label>
+      <Input name="phone" type="tel" onChange={handleChange} tabIndex="6" />
+      <Label>주소</Label>
+      <Input name="address" type="text" onChange={handleChange} tabIndex="7" />
+      <Label>이미지 업로드</Label>
+      <Input type="file" onChange={handleImageChange} tabIndex="8" />
+      <Label>회원 종류</Label>
+      <UserTypes>
+        <UserType
+          onClick={() => setRole("USER")}
+          selected={role === "USER"}
+          tabIndex="9"
+        >
+          유저
+        </UserType>
+        <UserType
+          onClick={() => setRole("TRAINER")}
+          selected={role === "TRAINER"}
+          tabIndex="10"
+        >
+          트레이너
+        </UserType>
+      </UserTypes>
+      <Button onClick={handleSubmit}>회원가입</Button>
     </Container>
   );
 }

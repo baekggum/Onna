@@ -4,7 +4,7 @@ import Page from "./Page";
 import MyCalendar from "../components/Appointment/MyCalendar";
 
 import profile from "/profile.png";
-import AppointmentListView from "../components/Appointment/MyCalendar";
+import AppointmentListView from "../components/Appointment/AppointmentListView";
 
 function AppointmentPage() {
   const appointments = [
@@ -67,7 +67,7 @@ function AppointmentPage() {
   ];
 
   const [date, onChange] = useState(new Date());
-
+  console.log(date);
   return (
     <Page title="예약 정보" prev="/profile">
       <MyCalendar date={date} onChange={onChange} />

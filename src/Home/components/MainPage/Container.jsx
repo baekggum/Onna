@@ -18,7 +18,7 @@ const PageBase = styled.div`
   border: 1px solid black;
 
   min-width: 900px;
-  overflow: auto;
+  /* overflow: auto; */
 `;
 
 export default function Container({ children }) {

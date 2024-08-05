@@ -9,7 +9,7 @@
 
 .feeInput {
   display: flex;
-  font-size: 30px;
+  font-size: 90px;
   gap: 10px;
   justify-content: center;
   align-items: center;
@@ -26,7 +26,7 @@
   text-align: left;
   background-color: white;
   color: black;
-  font-size: 40px;
+  font-size: 90px;
 }
 
 .fee-calculator {

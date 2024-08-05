@@ -32,9 +32,9 @@ const Main = styled.main`
 `;
 
 function CompletePage() {
-  const navigator = useNavigate();
+  const navigate = useNavigate();
   const onClick = () => {
-    navigator("/login", { replace: true });
+    navigate("/", { replace: true });
   };
 
   return (

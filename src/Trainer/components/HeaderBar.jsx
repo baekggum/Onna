@@ -29,10 +29,10 @@ const SportsCategoryName = styled.div`
   // margin-left: 10%;
 `;
 
-export default function HeaderBar() {
-  const location = useLocation();
+export default function HeaderBar({ category }) {
+  // const location = useLocation();
+  // const data = location.state;
   const navigate = useNavigate();
-  const data = location.state;
 
   return (
     <Header>
@@ -43,7 +43,7 @@ export default function HeaderBar() {
       <SportsCategoryName>
         {/* <img src={SoccerBall} width='50px'></img> */}
 
-        {data ? (
+        {category ? (
           <p
             style={{
               color: "white",
@@ -53,7 +53,7 @@ export default function HeaderBar() {
               paddingBottom: "30px",
             }}
           >
-            {data.name}
+            {category}
           </p>
         ) : (
           <p

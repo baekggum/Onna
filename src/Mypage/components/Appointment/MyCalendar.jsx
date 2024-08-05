@@ -13,10 +13,26 @@ const Container = styled.div`
     background-color: white;
   }
 
+  .react-calendar {
+    width: 100%;
+  }
+
   .react-calendar__navigation {
     display: flex;
     justify-content: center;
     gap: 8px;
+  }
+
+  .react-calendar__tile {
+    padding: 30px 10px;
+  }
+
+  &.react-calendar__tile--active {
+    background-color: orange;
+  }
+
+  &.react-calendar__tile--now {
+    border: 2px solid green;
   }
 `;
 

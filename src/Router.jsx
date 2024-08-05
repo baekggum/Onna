@@ -11,7 +11,7 @@ import AppointmentPage from "./Mypage/pages/AppointmentPage";
 import SettingPage from "./Mypage/pages/SettingPage";
 import ReviewPage from "./Mypage/pages/ReviewPage";
 
-import MainPage from "./Home/pages/mainpage";
+import MainPage from "./Home/pages/MainPage";
 import Search from "./Home/pages/Search";
 import Product_reg from "./Home/pages/reg_category/Product_reg";
 import Menu_reg from "./Home/pages/Menu_reg";
@@ -28,12 +28,14 @@ import AddressVerification from "./Home/pages/AddressVerification";
 import RegisterPage from "./User/pages/RegisterPage";
 import CompletePage from "./User/pages/CompletePage";
 import LoginPage from "./User/pages/LoginPage";
+import TrainerCertPage from "./User/pages/TrainerCertPage";
 
 export default function Router() {
   return (
     <>
       <Routes>
         <Route path="/" element={<LoginPage />}></Route>
+        <Route path="/trainercert" element={<TrainerCertPage />}></Route>
         <Route path="/register" element={<RegisterPage />}></Route>
         <Route path="/complete" element={<CompletePage />}></Route>
         <Route path="/product" element={<Product />}></Route>

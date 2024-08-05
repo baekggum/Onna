@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./SearchLogic.css";
 // import searchIcon from "/path/to/searchIcon.svg"; // 검색 아이콘 경로 수정
-import back from "/assets/Back_black.svg"; // 뒤로 가기 아이콘 경로 수정
+import Back from "/assets/Back_black.svg"; // 뒤로 가기 아이콘 경로 수정
+import { useNavigate } from "react-router-dom";
 
 export default function SearchPage() {
   const [query, setQuery] = useState("");
@@ -34,12 +35,14 @@ export default function SearchPage() {
     setRecentSearches([]);
   };
 
+  const navigate = useNavigate();
+
   return (
     <div className="search-page">
       <div className="search-header">
         <form onSubmit={handleSearch} className="search-form">
           <button className="back-button">
-            <img src={back} alt="Back" />
+            <img src={Back} alt="Back" onClick={() => navigate(-1)} />
           </button>
           <input
             type="text"
@@ -70,17 +73,6 @@ export default function SearchPage() {
               <li key={index}>{search}</li>
             ))}
           </ul>
-        </section>
-        <section className="search-results">
-          {results.length > 0 && (
-            <div className="results">
-              {results.map((result, index) => (
-                <div key={index} className="result">
-                  {result}
-                </div>
-              ))}
-            </div>
-          )}
         </section>
       </div>
     </div>
