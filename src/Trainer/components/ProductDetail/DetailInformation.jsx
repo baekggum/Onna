@@ -74,6 +74,7 @@ const DetailButtons2Info = styled.div`
 export default function DetailInformation() {
   const location = useLocation();
   const data = location.state; // 전달된 데이터를 가져옴
+  console.log(data);
   const [selectedButton, setSelectedButton] = useState("소개");
 
   const handleButtonClick = (buttonName) => {
@@ -84,23 +85,23 @@ export default function DetailInformation() {
     <>
       <div style={{ display: "flex" }}>
         <img
-          src={data.img}
+          src={data.image}
           style={{ width: "180px", borderRadius: "20px", margin: "0 0 10px" }}
         />
-        <p style={{ margin: "0", padding: "0 10px" }}>{data.content}</p>
+        <p style={{ margin: "0", padding: "0 10px" }}>{data.description}</p>
       </div>
       <DetailInfoText>
         <IoMdPhonePortrait />
-        {data.phonenumber}
+        {data.phoneNum}
       </DetailInfoText>
       <DetailInfoText>
         <MdHome />
-        {data.address}
+        {data.location}
       </DetailInfoText>
       <DetailButtons>
         <li>
           <FcLike className="Icons" />
-          <p>{data.love}</p>
+          <p>{data.productLike}</p>
         </li>
         <li>
           <FaLocationDot className="Icons" />

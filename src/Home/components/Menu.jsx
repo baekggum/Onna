@@ -1,24 +1,31 @@
 import "./Menu.css";
 import X from "/assets/X.svg";
 import plus from "/assets/Plus.svg";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Menu() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="menu_headbar">
         <button>
-          <img src={X} alt="xIcon" />
+          <img src={X} alt="xIcon" onClick={() => navigate(-1)} />
         </button>
         <div className="menuIn">
           <h3>메뉴</h3>
         </div>
         <button>
-          <img src={plus} alt="plusIcon" />
+          <Link to="/reginfo">
+            <img src={plus} alt="plusIcon" />
+          </Link>
         </button>
       </div>
       <div className="menuContainer"></div>
       <div className="regAcon">
-        <button className="regB">등록 완료</button>
+        <Link to="/product">
+          <button className="regB">등록 완료</button>
+        </Link>
       </div>
     </>
   );

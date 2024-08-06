@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./search_add.css";
 import back from "/assets/Back_black.svg";
 import address from "/assets/Address.svg";
+import { useNavigate } from "react-router-dom";
 
 const SearchAdd = () => {
   const [query, setQuery] = useState("");
@@ -40,11 +41,13 @@ const SearchAdd = () => {
     setSelectedAddress(address);
   };
 
+  const navigate = useNavigate();
+
   return (
     <div className="container">
       <div className="headbar">
         <button>
-          <img src={back} alt="backIcon" width="20" height="20" />
+          <img src={back} alt="backIcon" onClick={() => navigate(-1)} />
         </button>
         <div className="addin">
           <h3>주소 입력</h3>

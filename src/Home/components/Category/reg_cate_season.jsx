@@ -22,49 +22,46 @@ const Reg_cate_season = () => {
       <div className="category">
         <h2>계절스포츠 선택</h2>
         <div className="left">
-          <Link to="/product">
+          <Link to="/map">
             <button>서핑</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>스노우보드</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>스쿠버다이빙</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>아이스스케이트</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>웨이크보드</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>패들보드(SUP)</button>
           </Link>
         </div>
         <div className="right">
-          <Link to="/product">
+          <Link to="/map">
             <button>수상스키</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>스노쿨링</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>스키</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>요트</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>카누/카약</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>프리다이빙</button>
           </Link>
         </div>
       </div>
-      <footer>
-        <button>다음</button>
-      </footer>
     </div>
   );
 };

@@ -1,9 +1,24 @@
-import { useState } from "react";
+// Holiday.jsx
+import React, { createContext, useState, useContext } from "react";
 import "./Details.css";
 
-export default function WeekdaySelector() {
-  const daysOfWeek = ["월", "화", "수", "목", "금", "토", "일"];
+// WeekdayContext 생성 및 제공
+const WeekdayContext = createContext();
+
+export const WeekdayProvider = ({ children }) => {
   const [selectedDays, setSelectedDays] = useState([]);
+
+  return (
+    <WeekdayContext.Provider value={{ selectedDays, setSelectedDays }}>
+      {children}
+    </WeekdayContext.Provider>
+  );
+};
+
+// WeekdaySelector 컴포넌트
+export const WeekdaySelector = () => {
+  const daysOfWeek = ["월", "화", "수", "목", "금", "토", "일"];
+  const { selectedDays, setSelectedDays } = useContext(WeekdayContext);
 
   const handleCheckboxChange = (day) => {
     setSelectedDays((prevSelectedDays) =>
@@ -31,4 +46,4 @@ export default function WeekdaySelector() {
       </div>
     </div>
   );
-}
+};

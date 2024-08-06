@@ -7,8 +7,8 @@
 
 .mapsection {
   position: relative;
-  background-image: url("../../assets/map.png");
-  height: 75%;
+  background-image: url("/assets/Map.png");
+  height: 70%;
   background-size: cover;
   background-position: center;
 }
@@ -40,5 +40,5 @@
   font-size: 30px;
   font-family: "BM HANNA_TTF";
   background-color: transparent;
-  width: 100px;
+  width: 100%;
 }

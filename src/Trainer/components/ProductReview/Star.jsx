@@ -1,3 +1,5 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
@@ -44,15 +46,29 @@ const Star_rating_base = styled.div`
   padding: 0;
 `;
 export default function ShowStar() {
+  const [review, setReview] = useState([]);
   const location = useLocation();
   const data = location.state;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_APP_URL}/review/product/${data.productId}`
+          // `${import.meta.env.VITE_APP_URL}/review/product/${data.productId}`
+        );
+        setReview(response.data);
+        console.log(response.data); // 응답 데이터 로그
+      } catch (error) {
+        console.error("오류: ", error);
+      }
+    };
+    if (review.length === 0) fetchData(); // 메뉴 데이터가 비어 있을 때만 fetch
+  }, [review.length, data.productId]); // 의존성 추가
   //   console.log(data);
   // reviews의 star 평균 계산
-  const totalStars = data.reviews.reduce(
-    (acc, review) => acc + review.score,
-    0
-  );
-  const averageStar = totalStars / data.reviews.length;
+  const totalStars = review.reduce((acc, review) => acc + review.star, 0);
+  const averageStar = totalStars / review.length;
   //   console.log(totalStars);
   //   console.log(averageStar);
   // 평균 별점을 star에 할당
@@ -80,7 +96,7 @@ export default function ShowStar() {
             <span>★</span>
           </Star_rating_base>
         </Star_rating>
-        <p style={{ fontSize: "20pt" }}>{data.reviews.length}개</p>
+        <p style={{ fontSize: "20pt" }}>{review.length}개</p>
       </StarsContainer>
     </StarScore>
   );

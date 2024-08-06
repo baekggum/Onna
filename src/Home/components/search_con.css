@@ -1,6 +1,6 @@
 .addBox {
   padding-top: 100px;
-  padding-bottom: 600px;
+  padding-bottom: 10px;
 }
 
 .inputWrapper {
@@ -32,6 +32,20 @@
 .regAcon {
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.addinput {
+  padding-left: 680px;
+  padding-bottom: 400px;
+}
+
+.addinput button {
+  width: 200px;
+  height: 100px;
+  border-radius: 20px;
+  background: white;
+  font-family: "BM HANNA_TTF";
+  font-size: 40px;
 }
 
 .regA {

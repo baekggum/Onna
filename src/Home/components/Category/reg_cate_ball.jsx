@@ -23,49 +23,46 @@ const Reg_cate_ball = () => {
       <div className="category">
         <h2>구기스포츠 선택</h2>
         <div className="left">
-          <Link to="/product">
+          <Link to="/map">
             <button>골프</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>당구</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>배드민턴</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>스쿼시/라켓볼</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>족구</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>탁구</button>
           </Link>
         </div>
         <div className="right">
-          <Link to="/product">
+          <Link to="/map">
             <button>농구</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>배구</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>볼링</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>야구</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>축구</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>테니스</button>
           </Link>
         </div>
       </div>
-      <footer>
-        <button>다음</button>
-      </footer>
     </div>
   );
 };

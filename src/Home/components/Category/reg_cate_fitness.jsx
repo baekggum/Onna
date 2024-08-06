@@ -22,28 +22,25 @@ const Reg_cate_ball = () => {
       <div className="category">
         <h2>피트니스 선택</h2>
         <div className="left">
-          <Link to="/product">
+          <Link to="/map">
             <button>스피닝</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>크로스핏</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>필라테스</button>
           </Link>
         </div>
         <div className="right">
-          <Link to="/product">
+          <Link to="/map">
             <button>요가</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>PT</button>
           </Link>
         </div>
       </div>
-      <footer>
-        <button>다음</button>
-      </footer>
     </div>
   );
 };

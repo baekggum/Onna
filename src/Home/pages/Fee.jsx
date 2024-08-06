@@ -1,14 +1,12 @@
 import Container from "../components/MainPage/Container";
 import FeeCalculator from "../components/Fee/FeeCalculator";
-import NextButton from "../components/NextButton";
-import BackButton from "../components/BackButton";
+import Footer from "./Footer";
 
 export default function Fee() {
   return (
     <Container>
       <FeeCalculator />
-      <BackButton />
-      <NextButton />
+      <Footer onNext={(navigate) => navigate("/menureg")} />
     </Container>
   );
 }

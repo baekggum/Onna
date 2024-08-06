@@ -58,7 +58,7 @@ export default function Router() {
         <Route path="/mainpage" element={<MainPage />}></Route>
         <Route path="/search" element={<Search />}></Route>
         <Route path="/productreg" element={<Product_reg />}></Route>
-        <Route path="/Menureg" element={<Menu_reg />}></Route>
+        <Route path="/menureg" element={<Menu_reg />}></Route>
         <Route path="/fee" element={<Fee />}></Route>
         <Route path="/map" element={<Map />}></Route>
         <Route path="/reginfo" element={<RegInfo />}></Route>

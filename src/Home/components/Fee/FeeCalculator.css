@@ -59,16 +59,6 @@
   color: black;
 }
 
-.feeInput input {
-  width: 130px;
-  height: 50px;
-  font-size: 30px;
-  font-family: "BM HANNA_TTF";
-  text-align: left;
-  background-color: white;
-  color: black;
-}
-
 .output .item {
   display: flex;
   justify-content: space-between;

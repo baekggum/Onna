@@ -1,3 +1,5 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
@@ -6,9 +8,25 @@ const ReviewText = styled.p`
   padding: 0;
 `;
 export default function ShowReview() {
+  const [review, setReview] = useState([]);
   const location = useLocation();
   const data = location.state;
   console.log(data);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_APP_URL}/review/product/${data.productId}`
+        );
+        setReview(response.data);
+        console.log(response.data); // 응답 데이터 로그
+      } catch (error) {
+        console.error("오류: ", error);
+      }
+    };
+    if (review.length === 0) fetchData(); // 메뉴 데이터가 비어 있을 때만 fetch
+  }, [review.length, data.productId]); // 의존성 추가
 
   return (
     <>
@@ -22,10 +40,10 @@ export default function ShowReview() {
         전체 리뷰
       </div>
       <div>
-        {data.reviews && data.reviews.length > 0 ? (
-          data.reviews.map((review) => (
+        {review && review.length > 0 ? (
+          review.map((r) => (
             <div
-              key={review.id}
+              key={r.id}
               style={{
                 margin: "20px 0",
                 // border: "1px solid #d9d9d9",
@@ -33,13 +51,12 @@ export default function ShowReview() {
               }}
             >
               <img
-                src={review.img}
+                src={r.picture}
                 alt="리뷰 이미지"
                 style={{ width: "100px", height: "100px" }}
               />
-              <ReviewText>{review.title}</ReviewText>
-              <ReviewText>별점: {review.score.toFixed(1)}</ReviewText>
-              <ReviewText>{review.content}</ReviewText>
+              <ReviewText>별점: {r.star.toFixed(1)}</ReviewText>
+              <ReviewText>{r.memo}</ReviewText>
               <div
                 style={{
                   display: "flex",
@@ -47,8 +64,8 @@ export default function ShowReview() {
                   color: "rgba(0,0,0,0.42)",
                 }}
               >
-                <ReviewText>{review.author}</ReviewText>
-                <ReviewText>{review.createdDate}</ReviewText>
+                <ReviewText>{r.userId}</ReviewText>
+                <ReviewText>{r.createdDate}</ReviewText>
               </div>
             </div>
           ))

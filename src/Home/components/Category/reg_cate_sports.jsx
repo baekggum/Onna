@@ -23,43 +23,40 @@ const Reg_cate_sports = () => {
       <div className="category">
         <h2>스포츠 선택</h2>
         <div className="left">
-          <Link to="/product">
+          <Link to="/map">
             <button>러닝/마라톤/육상</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>승마</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>스케이트보드</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>인라인스케이트</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>체조</button>
           </Link>
         </div>
         <div className="right">
-          <Link to="/product">
+          <Link to="/map">
             <button>사격</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>수영</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>양궁/국궁</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>자전거/사이클</button>
           </Link>
-          <Link to="/product">
+          <Link to="/map">
             <button>클라이밍/암벽등반</button>
           </Link>
         </div>
       </div>
-      <footer>
-        <button>다음</button>
-      </footer>
     </div>
   );
 };

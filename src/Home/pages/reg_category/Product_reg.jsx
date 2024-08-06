@@ -1,12 +1,9 @@
 import Container from "../../components/MainPage/Container";
-import Reg_cate from "../../components/category/reg_cate";
-import NextButton from "../../components/NextButton";
-
+import Reg_cate from "../../components/Category/reg_cate";
 export default function Product_reg() {
   return (
     <Container>
       <Reg_cate />
-      <NextButton />
     </Container>
   );
 }

@@ -1,21 +1,57 @@
-import { useState } from "react";
+import { createContext, useState, useContext } from "react";
 import "./Details.css";
 import Plus from "/assets/Plus.svg";
 
-export default function Details() {
-  const [image, setImage] = useState(null);
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+// DetailsContext.js
+export const DetailsContext = createContext();
+
+export const DetailsProvider = ({ children }) => {
+  const [details, setDetails] = useState({
+    image: null,
+    title: "",
+    content: "",
+  });
+
+  return (
+    <DetailsContext.Provider value={{ details, setDetails }}>
+      {children}
+    </DetailsContext.Provider>
+  );
+};
+
+// Details.js
+const Details = () => {
+  const { details, setDetails } = useContext(DetailsContext);
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setImage(URL.createObjectURL(file));
+      setDetails((prevDetails) => ({
+        ...prevDetails,
+        image: URL.createObjectURL(file),
+      }));
     }
   };
 
   const handleRemoveImage = () => {
-    setImage(null);
+    setDetails((prevDetails) => ({
+      ...prevDetails,
+      image: null,
+    }));
+  };
+
+  const handleTitleChange = (event) => {
+    setDetails((prevDetails) => ({
+      ...prevDetails,
+      title: event.target.value,
+    }));
+  };
+
+  const handleContentChange = (event) => {
+    setDetails((prevDetails) => ({
+      ...prevDetails,
+      content: event.target.value,
+    }));
   };
 
   return (
@@ -28,9 +64,9 @@ export default function Details() {
           style={{ display: "none" }}
           onChange={handleImageChange}
         />
-        {image && (
+        {details.image && (
           <div className="image-preview">
-            <img src={image} alt="미리보기" className="preview-image" />
+            <img src={details.image} alt="미리보기" className="preview-image" />
             <button onClick={handleRemoveImage} className="remove-button">
               삭제
             </button>
@@ -45,16 +81,18 @@ export default function Details() {
           type="text"
           className="title"
           placeholder="제목"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          value={details.title}
+          onChange={handleTitleChange}
         />
         <textarea
           className="content"
           placeholder="내용"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
+          value={details.content}
+          onChange={handleContentChange}
         ></textarea>
       </div>
     </>
   );
-}
+};
+
+export default Details;

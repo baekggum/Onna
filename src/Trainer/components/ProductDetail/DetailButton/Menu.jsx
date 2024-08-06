@@ -20,13 +20,13 @@ export default function Menu({ data }) {
             onClick={() => handleItemClick(item)}
           >
             <img
-              src={item.img}
+              src={item.image}
               width="150px"
               height="150px"
               style={{ margin: "20px" }}
             />
             <p style={{ fontSize: "20pt" }}>
-              {item.name}
+              {item.title}
               <br />
               {item.price} 원
             </p>

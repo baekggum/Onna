@@ -15,7 +15,6 @@ const PageBase = styled.div`
   height: 100%;
 
   background-color: white;
-  border: 1px solid black;
 
   min-width: 900px;
   /* overflow: auto; */

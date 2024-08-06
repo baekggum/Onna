@@ -10,7 +10,7 @@ export default function ReservationMenu({ data }) {
     >
       <div style={{ width: "70%", fontSize: "15pt" }}>
         <div style={{ display: "flex", gap: "30px" }}>
-          <p>메뉴</p> <p>{data.name}</p>
+          <p>메뉴</p> <p>{data.title}</p>
         </div>
         <div style={{ display: "flex", gap: "30px" }}>
           <p>가격</p> <p>{data.price}</p>
