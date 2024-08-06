@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import "./search_con.css";
 import back from "/assets/Back_black.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const SearchCon = () => {
   // State to store the selected address components
@@ -47,7 +48,60 @@ const SearchCon = () => {
     }).open();
   };
 
+  const location = useLocation();
   const navigate = useNavigate();
+
+  const createProduct = async (data, image) => {
+    console.log(data);
+    console.log(image);
+    const formData = new FormData();
+    formData.append(
+      "productDto",
+      new Blob([JSON.stringify(data)], {
+        type: "application/json",
+      })
+    );
+    formData.append("image", image);
+
+    const response = await axios.post(
+      `${import.meta.env.VITE_APP_URL}/product/create`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+
+    return response.data;
+  };
+
+  const onClick = async () => {
+    const address = [
+      doSpecialCity,
+      city,
+      district,
+      roadAddress,
+      aptAddress,
+      postalCode,
+    ].join(" ");
+    const data = {
+      ...location.state,
+      address,
+      startTime: new Date(),
+      endTime: new Date(),
+      closeDay: "",
+    };
+    const image = data.image;
+    delete data.image;
+
+    const product = await createProduct(data, image);
+    navigate("/menureg", {
+      state: {
+        productId: product.productId,
+      },
+    });
+  };
 
   return (
     <div className="container">
@@ -98,9 +152,9 @@ const SearchCon = () => {
         <button onClick={searchAddress}>주소입력</button>
       </div>
       <div className="regAcon">
-        <Link to="/menureg">
-          <button className="regA">확인</button>
-        </Link>
+        <button className="regA" onClick={onClick}>
+          확인
+        </button>
       </div>
     </div>
   );

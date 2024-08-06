@@ -1,5 +1,6 @@
 export default function Reservation({ data }) {
   const totalPrice = data.price * data.dateCount; // 총 결제 금액 계산
+  console.log(data);
   return (
     <div
       style={{

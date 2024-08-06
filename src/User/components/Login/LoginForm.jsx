@@ -43,6 +43,9 @@ function LoginForm() {
       console.log(response.data);
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("uid", loginData.uid);
+        localStorage.setItem("nickname", response.data.nickname);
+        localStorage.setItem("role", response.data.role);
         navigate("/mainpage");
       } else {
         alert("로그인 실패");

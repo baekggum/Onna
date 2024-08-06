@@ -11,6 +11,7 @@ import {
 } from "../components/Reg_information/Holiday";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const ContentWrapper = styled.div`
   flex: 1;
@@ -21,6 +22,7 @@ const ContentWrapper = styled.div`
 
 export default function Reg_info() {
   const navigate = useNavigate();
+
   return (
     <Container>
       <ContentWrapper>

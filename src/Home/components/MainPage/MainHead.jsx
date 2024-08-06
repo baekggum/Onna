@@ -1,9 +1,11 @@
 import "./MainHead.css";
 import searchIcon from "/assets/SearchW.svg";
 import bell from "/assets/Bell.svg";
+import plus from "/assets/Plus.svg";
 import LocationDrop from "./LocationDrop";
 import image from "/assets/AppTitle.png";
 import styled from "styled-components";
+import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 
 const TitleImage = styled.img`
@@ -20,6 +22,8 @@ const SearchLink = styled(Link)`
 `;
 
 export default function MainHead() {
+  const navigate = useNavigate();
+
   return (
     <header>
       <div className="header-top">
@@ -27,6 +31,11 @@ export default function MainHead() {
         <button>
           <img src={bell} alt="bell" />
         </button>
+        {localStorage.getItem("role") == "TRAINER" && (
+          <button onClick={() => navigate("/productreg")}>
+            <img src={plus} alt="plus" />
+          </button>
+        )}
       </div>
       <div className="search-bar">
         <img src={searchIcon} alt="Search Icon" />

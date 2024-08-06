@@ -1,11 +1,14 @@
 import "./Menu.css";
 import X from "/assets/X.svg";
 import plus from "/assets/Plus.svg";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export default function Menu() {
+  const location = useLocation();
   const navigate = useNavigate();
+  console.log(location.state);
+
   return (
     <>
       <div className="menu_headbar">

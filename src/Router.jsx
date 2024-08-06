@@ -29,6 +29,7 @@ import RegisterPage from "./User/pages/RegisterPage";
 import CompletePage from "./User/pages/CompletePage";
 import LoginPage from "./User/pages/LoginPage";
 import TrainerCertPage from "./User/pages/TrainerCertPage";
+import RegProduct from "./Home/pages/RegProduct";
 
 export default function Router() {
   return (
@@ -57,7 +58,8 @@ export default function Router() {
         <Route path="/review" element={<ReviewPage />}></Route>
         <Route path="/mainpage" element={<MainPage />}></Route>
         <Route path="/search" element={<Search />}></Route>
-        <Route path="/productreg" element={<Product_reg />}></Route>
+        <Route path="/productreg" element={<RegProduct />}></Route>
+        <Route path="/categoryreg" element={<Product_reg />}></Route>
         <Route path="/menureg" element={<Menu_reg />}></Route>
         <Route path="/fee" element={<Fee />}></Route>
         <Route path="/map" element={<Map />}></Route>

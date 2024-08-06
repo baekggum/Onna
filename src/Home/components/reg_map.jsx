@@ -1,10 +1,11 @@
 import "./reg_map.css";
 import back from "/assets/Back_black.svg";
 import address from "/assets/Address.svg";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 
 const reg_map = () => {
+  const location = useLocation();
   const navigate = useNavigate();
 
   return (
@@ -18,7 +19,7 @@ const reg_map = () => {
       <section className="mapsection">
         <div className="addsearch">
           <img src={address} alt="address" />
-          <Link to="/addressver">
+          <Link to="/addressver" state={location.state}>
             <input type="text" placeholder="주소를 입력하세요" />
           </Link>
         </div>
